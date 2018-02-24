@@ -13,6 +13,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.sevenstar.MainActivity;
 import com.example.sevenstar.R;
 import com.example.sevenstar.activity.BaseActivity;
+import com.example.sevenstar.forgetPassword.ForgetActivity;
 import com.example.sevenstar.login.bean.LoginBean;
 import com.example.sevenstar.login.presenter.LoginPresenter;
 import com.example.sevenstar.login.view.LoginView;
@@ -70,6 +71,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.login_bt_forgetPassword:
+                $startActivity(ForgetActivity.class);
                 break;
             case R.id.login_bt_register:
                 register();

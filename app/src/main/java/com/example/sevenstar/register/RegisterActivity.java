@@ -69,7 +69,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.register_et_verification:
+            case R.id.register_bt_verification:
                 getVerificationCode();
                 break;
             case R.id.bt_register:

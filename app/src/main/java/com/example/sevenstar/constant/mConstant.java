@@ -21,4 +21,7 @@ public class mConstant {
 
     //发送验证码
     public static final String SMS = "kjbd/user/sms";
+
+    //忘记密码（修改密码）
+    public static final String Forget = "kjbd/user/modifyPassword";
 }
