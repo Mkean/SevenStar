@@ -10,12 +10,15 @@ import android.widget.TextView;
 import com.example.sevenstar.MainActivity;
 import com.example.sevenstar.R;
 import com.example.sevenstar.activity.BaseActivity;
+import com.example.sevenstar.bean.SMSBean;
 import com.example.sevenstar.login.LoginActivity;
+import com.example.sevenstar.presenter.SMSPresenter;
 import com.example.sevenstar.register.bean.RegisterBean;
 import com.example.sevenstar.register.presenter.RegisterPresenter;
 import com.example.sevenstar.register.view.RegisterView;
+import com.example.sevenstar.view.SMSView;
 
-public class RegisterActivity extends BaseActivity implements View.OnClickListener, RegisterView {
+public class RegisterActivity extends BaseActivity implements View.OnClickListener, RegisterView, SMSView {
 
     private TextView mTitleName;
     private EditText mEtUserName;
@@ -27,12 +30,14 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
     private EditText mEtEmail;
     private Button mBtRegister;
     private RegisterPresenter registerPresenter;
+    private SMSPresenter presenter;
 
     @Override
     public void initData() {
         super.initData();
         mTitleName.setText(R.string.register_title_name);
         registerPresenter = new RegisterPresenter(this);
+        presenter = new SMSPresenter(this);
     }
 
     @Override
@@ -65,6 +70,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.register_et_verification:
+                getVerificationCode();
                 break;
             case R.id.bt_register:
                 register();
@@ -72,6 +78,16 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
             default:
                 break;
         }
+    }
+
+    private void getVerificationCode() {
+        String mUserName = mEtUserName.getText().toString();
+
+        if (mUserName.equals("")) {
+            $toast("请填写手机号！");
+            return;
+        }
+        presenter.SMS(mUserName, "1");
     }
 
     private void register() {
@@ -100,6 +116,18 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
 
     @Override
     public void registerFailed(Throwable e) {
+        $toast("网络错误");
+        $Log(e.getMessage());
+    }
+
+    @Override
+    public void SMSSuccess(SMSBean smsBean) {
+        $toast(smsBean.getMessage());
+    }
+
+    @Override
+    public void SMSFailed(Throwable e) {
+        $toast("网络错误");
         $Log(e.getMessage());
     }
 
@@ -109,5 +137,10 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         if (registerPresenter != null) {
             registerPresenter.detach();
         }
+        if (presenter != null) {
+            presenter.detach();
+        }
     }
+
+
 }

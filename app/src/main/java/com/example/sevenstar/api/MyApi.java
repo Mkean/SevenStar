@@ -1,5 +1,6 @@
 package com.example.sevenstar.api;
 
+import com.example.sevenstar.bean.SMSBean;
 import com.example.sevenstar.constant.mConstant;
 import com.example.sevenstar.login.bean.LoginBean;
 import com.example.sevenstar.register.bean.RegisterBean;
@@ -23,8 +24,12 @@ public interface MyApi {
 
     //注册
     @FormUrlEncoded
-    @POST
+    @POST(mConstant.Register)
     Observable<RegisterBean> register(@Field("nickName") String nickName, @Field("email") String email
             , @Field("phone") String phone, @Field("password") String password, @Field("passwordTwo") String passwordTwo
             , @Field("check") String check);
+
+    //发送验证码
+    @GET(mConstant.SMS)
+    Observable<SMSBean> SMS(@Query("phone") String phone, @Query("type") String type);
 }
