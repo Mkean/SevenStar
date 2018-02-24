@@ -36,10 +36,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
         super.initData();
         loginPresenter = new LoginPresenter(this);
         mTitleName.setText(R.string.title_name);
-        Glide.with(this).load(IMG)
-                .skipMemoryCache(true)
-                .diskCacheStrategy(DiskCacheStrategy.NONE)
-                .into(img_verification);
+        checkoutImg();
     }
 
     @Override
@@ -81,15 +78,20 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
                 login();
                 break;
             case R.id.login_img_verification:
-                Glide.with(this).load(IMG)
-                        .skipMemoryCache(true)
-                        .diskCacheStrategy(DiskCacheStrategy.NONE)
-                        .into(img_verification);
+                checkoutImg();
                 break;
             default:
                 break;
         }
     }
+
+    private void checkoutImg() {
+        Glide.with(this).load(IMG)
+                .skipMemoryCache(true)
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .into(img_verification);
+    }
+
 
     private void register() {
         $startActivity(RegisterActivity.class);
@@ -100,7 +102,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
         String mPassword = et_password.getText().toString();
         String mVerification = et_verification.getText().toString();
         if (mUserName.equals("") || mPassword.equals("") || mVerification.equals("")) {
-            $toast("用户名或密码不能为空");
+            $toast("请检查是否填写完整！");
             return;
         }
         loginPresenter.login(mUserName, mPassword, mVerification);
@@ -112,20 +114,14 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
             $toast(loginBean.getMessage());
             $startActivity(MainActivity.class);
         } else {
-            Glide.with(this).load(IMG)
-                    .skipMemoryCache(true)
-                    .diskCacheStrategy(DiskCacheStrategy.NONE)
-                    .into(img_verification);
+            checkoutImg();
             $toast(loginBean.getMessage());
         }
     }
 
     @Override
     public void LoginFailed(Throwable e) {
-        Glide.with(this).load(IMG)
-                .skipMemoryCache(true)
-                .diskCacheStrategy(DiskCacheStrategy.NONE)
-                .into(img_verification);
+        checkoutImg();
         $Log(e.getMessage());
     }
 
