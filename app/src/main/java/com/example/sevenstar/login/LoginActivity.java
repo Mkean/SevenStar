@@ -1,0 +1,139 @@
+package com.example.sevenstar.login;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.example.sevenstar.MainActivity;
+import com.example.sevenstar.R;
+import com.example.sevenstar.activity.BaseActivity;
+import com.example.sevenstar.login.bean.LoginBean;
+import com.example.sevenstar.login.presenter.LoginPresenter;
+import com.example.sevenstar.login.view.LoginView;
+import com.example.sevenstar.register.RegisterActivity;
+
+public class LoginActivity extends BaseActivity implements View.OnClickListener, LoginView {
+
+    public static final String IMG = "http://www.bwstudent.com/kjbd/user/getImgCheck?ak=1";
+    private EditText et_userName;
+    private EditText et_password;
+    private EditText et_verification;
+    private ImageView img_verification;
+    private TextView bt_forgetPassword;
+    private TextView bt_register;
+    private Button bt_login;
+    private TextView mTitleName;
+    private LoginPresenter loginPresenter;
+
+    @Override
+    public void initData() {
+        super.initData();
+        loginPresenter = new LoginPresenter(this);
+        mTitleName.setText(R.string.title_name);
+        Glide.with(this).load(IMG)
+                .skipMemoryCache(true)
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .into(img_verification);
+    }
+
+    @Override
+    public void setListener() {
+        super.setListener();
+        bt_register.setOnClickListener(this);
+        bt_login.setOnClickListener(this);
+        bt_forgetPassword.setOnClickListener(this);
+        img_verification.setOnClickListener(this);
+    }
+
+    @Override
+    public void initView() {
+        super.initView();
+        mTitleName = (TextView) findViewById(R.id.title_name);
+        et_userName = (EditText) findViewById(R.id.login_et_userName);
+        et_password = (EditText) findViewById(R.id.login_et_password);
+        et_verification = (EditText) findViewById(R.id.login_et_verification);
+        img_verification = (ImageView) findViewById(R.id.login_img_verification);
+        bt_forgetPassword = (TextView) findViewById(R.id.login_bt_forgetPassword);
+        bt_register = (TextView) findViewById(R.id.login_bt_register);
+        bt_login = (Button) findViewById(R.id.bt_login);
+    }
+
+    @Override
+    protected int getLayout() {
+        return R.layout.activity_login;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.login_bt_forgetPassword:
+                break;
+            case R.id.login_bt_register:
+                register();
+                break;
+            case R.id.bt_login:
+                login();
+                break;
+            case R.id.login_img_verification:
+                Glide.with(this).load(IMG)
+                        .skipMemoryCache(true)
+                        .diskCacheStrategy(DiskCacheStrategy.NONE)
+                        .into(img_verification);
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void register() {
+        $startActivity(RegisterActivity.class);
+    }
+
+    private void login() {
+        String mUserName = et_userName.getText().toString();
+        String mPassword = et_password.getText().toString();
+        String mVerification = et_verification.getText().toString();
+        if (mUserName.equals("") || mPassword.equals("") || mVerification.equals("")) {
+            $toast("用户名或密码不能为空");
+            return;
+        }
+        loginPresenter.login(mUserName, mPassword, mVerification);
+    }
+
+    @Override
+    public void LoginSuccess(LoginBean loginBean) {
+        if (loginBean.getStatus().equals("0000")) {
+            $toast(loginBean.getMessage());
+            $startActivity(MainActivity.class);
+        } else {
+            Glide.with(this).load(IMG)
+                    .skipMemoryCache(true)
+                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+                    .into(img_verification);
+            $toast(loginBean.getMessage());
+        }
+    }
+
+    @Override
+    public void LoginFailed(Throwable e) {
+        Glide.with(this).load(IMG)
+                .skipMemoryCache(true)
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .into(img_verification);
+        $Log(e.getMessage());
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (loginPresenter != null) {
+            loginPresenter.detach();
+        }
+    }
+}

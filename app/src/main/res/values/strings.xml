@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SevenStarTechnology</string>
+    <string name="title_name">Login</string>
+    <string name="register_title_name">Register</string>
+</resources>
