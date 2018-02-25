@@ -58,7 +58,7 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -67,7 +67,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".register.RegisterActivity" />
-        <activity android:name=".forgetPassword.ForgetActivity"></activity>
+        <activity android:name=".forgetPassword.ForgetActivity" />
+        <activity android:name=".addressbook.AddressBookActivity"></activity>
     </application>
 
 </manifest>

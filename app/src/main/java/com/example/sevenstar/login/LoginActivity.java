@@ -89,7 +89,9 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
 
     private void checkoutImg() {
         Glide.with(this).load(IMG)
+                //设置内存禁止内存缓存
                 .skipMemoryCache(true)
+                //禁止磁盘缓存
                 .diskCacheStrategy(DiskCacheStrategy.NONE)
                 .into(img_verification);
     }
@@ -115,6 +117,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
         if (loginBean.getStatus().equals("0000")) {
             $toast(loginBean.getMessage());
             $startActivity(MainActivity.class);
+            finish();
         } else {
             checkoutImg();
             $toast(loginBean.getMessage());
