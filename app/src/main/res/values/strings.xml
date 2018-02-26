@@ -3,4 +3,5 @@
     <string name="title_name">Login</string>
     <string name="register_title_name">Register</string>
     <string name="forget_title_name">ForgetPassword</string>
+    <string name="addressbook_title_name">AddressBook</string>
 </resources>

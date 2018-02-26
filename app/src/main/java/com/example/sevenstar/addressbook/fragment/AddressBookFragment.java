@@ -28,15 +28,14 @@ public class AddressBookFragment extends Fragment {
     private TextView addressBookTitleName;
     private TabLayout tabLayout;
     private ViewPager viewPager;
-    ArrayList<Fragment> fragmentList = new ArrayList<Fragment>();
-    ArrayList<String> titleList = new ArrayList<String>();
+    ArrayList<Fragment> fragmentList;
+    ArrayList<String> titleList;
     private LinearLayout neeFriend;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-//        view = View.inflate(getActivity(), R.layout.address_book_fragment,null);
-        view = LayoutInflater.from(getActivity()).inflate(R.layout.address_book_fragment,null );
+        view = LayoutInflater.from(getActivity()).inflate(R.layout.address_book_fragment, null);
         //初始化VIewty
         initView();
         //对tabbar的数据进行
@@ -48,10 +47,11 @@ public class AddressBookFragment extends Fragment {
     }
 
     private void initContent() {
+        fragmentList = new ArrayList<Fragment>();
         fragmentList.add(new ABFragment1());
         fragmentList.add(new ABFragment2());
         fragmentList.add(new ABFragment3());
-
+        titleList = new ArrayList<String>();
         titleList.add("手机通讯录");
         titleList.add("我的好友");
         titleList.add("我的好友");
@@ -79,12 +79,12 @@ public class AddressBookFragment extends Fragment {
 
     private void initView() {
         addressBookTitleName = view.findViewById(R.id.title_name);
-        tabLayout = view. findViewById(R.id.tablayout);
-        viewPager = view. findViewById(R.id.viewpager);
+        tabLayout = view.findViewById(R.id.tablayout);
+        viewPager = view.findViewById(R.id.viewpager);
         neeFriend = view.findViewById(R.id.newfriend);
     }
 
-    class  MPagerAdapter extends FragmentPagerAdapter {
+    class MPagerAdapter extends FragmentPagerAdapter {
 
         public MPagerAdapter(FragmentManager fm) {
             super(fm);
