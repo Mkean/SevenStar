@@ -4,14 +4,11 @@ package com.example.sevenstar;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.widget.TextView;
 
-import com.example.sevenstar.activity.BaseActivity;
 import com.example.sevenstar.addressbook.fragment.AddressBookFragment;
-import com.example.sevenstar.addressbook.fragment.MyFragment;
+import com.example.sevenstar.my.fragment.MyFragment;
 import com.example.sevenstar.addressbook.fragment.ScienceSircleFragment;
 import com.example.sevenstar.addressbook.fragment.consultFragment;
-import com.example.sevenstar.login.presenter.LoginPresenter;
 import com.hjm.bottomtabbar.BottomTabBar;
 
 public class MainActivity extends FragmentActivity {
@@ -25,7 +22,7 @@ public class MainActivity extends FragmentActivity {
         initView();
         bottomTabBar.init(getSupportFragmentManager())    //bottomTabBar是找到的控件的名字
                 .setImgSize(50,50)
-                .setFontSize(8)
+                .setFontSize(12)
                 .setTabPadding(4,6,10)
                 .setChangeColor(Color.RED,Color.DKGRAY)
                 .addTabItem("咨询", R.drawable.zx,consultFragment.class)

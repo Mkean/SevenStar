@@ -1,11 +1,11 @@
 [
     {
-        "merged": "D:\\SevenStar\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\abc_switch_thumb_material.xml",
-        "source": "C:\\Users\\j\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-24.2.1.aar\\5ab8790f0494373710f9100c657d689f\\res\\drawable\\abc_switch_thumb_material.xml"
-    },
-    {
         "merged": "D:\\SevenStar\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\ease_chatto_bg.xml",
         "source": "D:\\SevenStar\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable\\ease_chatto_bg.xml"
+    },
+    {
+        "merged": "D:\\SevenStar\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\abc_switch_thumb_material.xml",
+        "source": "C:\\Users\\j\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-24.2.1.aar\\5ab8790f0494373710f9100c657d689f\\res\\drawable\\abc_switch_thumb_material.xml"
     },
     {
         "merged": "D:\\SevenStar\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\abc_ic_menu_overflow_material.xml",
