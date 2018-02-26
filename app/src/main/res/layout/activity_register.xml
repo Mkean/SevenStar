@@ -103,6 +103,7 @@
             android:layout_marginLeft="10dp"
             android:background="@null"
             android:hint="请输入6-16位密码"
+            android:inputType="numberPassword"
             android:maxLength="16"
             android:singleLine="true"
             android:textSize="@dimen/dimen_30_dip" />
@@ -130,6 +131,7 @@
             android:layout_marginLeft="10dp"
             android:background="@null"
             android:hint="请再次输入密码"
+            android:inputType="numberPassword"
             android:maxLength="18"
             android:singleLine="true"
             android:textSize="@dimen/dimen_30_dip" />

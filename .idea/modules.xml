@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SevenStar.iml" filepath="$PROJECT_DIR$/SevenStar.iml" />
+      <module fileurl="file://D:\SevenStar\SevenStar.iml" filepath="D:\SevenStar\SevenStar.iml" />
+      <module fileurl="file://G:\TXT\workpace\SevenStar\.idea\SevenStar.iml" filepath="G:\TXT\workpace\SevenStar\.idea\SevenStar.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/easeui/easeui.iml" filepath="$PROJECT_DIR$/easeui/easeui.iml" />
     </modules>

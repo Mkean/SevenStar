@@ -13,6 +13,15 @@ public class mConstant {
     //登录
     public static final String Login = "kjbd/user/login";
 
+    //注册
+    public static final String Register = "kjbd/user/register";
+
     //检验手机是否被注册
     public static final String CheckPhone = "kjbd/user/checkPhone";
+
+    //发送验证码
+    public static final String SMS = "kjbd/user/sms";
+
+    //忘记密码（修改密码）
+    public static final String Forget = "kjbd/user/modifyPassword";
 }
