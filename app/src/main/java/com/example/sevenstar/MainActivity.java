@@ -9,9 +9,12 @@ import android.widget.TextView;
 import com.example.sevenstar.activity.BaseActivity;
 import com.example.sevenstar.addressbook.fragment.AddressBookFragment;
 import com.example.sevenstar.addressbook.fragment.ScienceCircleFragment;
-import com.example.sevenstar.addressbook.fragment.consultFragment;
+
 import com.example.sevenstar.login.presenter.LoginPresenter;
 import com.example.sevenstar.my.fragment.MyFragment;
+
+import com.example.sevenstar.addressbook.fragment.ConsultFragment;
+
 import com.hjm.bottomtabbar.BottomTabBar;
 
 public class MainActivity extends FragmentActivity {
@@ -26,12 +29,13 @@ public class MainActivity extends FragmentActivity {
         bottomTabBar.init(getSupportFragmentManager())    //bottomTabBar是找到的控件的名字
                 .setImgSize(50, 50)
                 .setFontSize(8)
-                .setTabPadding(4, 6, 10)
-                .setChangeColor(Color.RED, Color.DKGRAY)
-                .addTabItem("咨询", R.drawable.zx, consultFragment.class)
-                .addTabItem("科技圈", R.drawable.kjq, ScienceCircleFragment.class)
-                .addTabItem("通讯录", R.drawable.txl, AddressBookFragment.class)
-                .addTabItem("我的", R.drawable.wode, MyFragment.class)
+
+                .setTabPadding(4,6,10)
+                .setChangeColor(Color.RED,Color.DKGRAY)
+                .addTabItem("咨询", R.drawable.zx,ConsultFragment.class)
+                .addTabItem("科技圈",R.drawable.kjq, ScienceCircleFragment.class)
+                .addTabItem("通讯录",R.drawable.txl, AddressBookFragment.class)
+                .addTabItem("我的",R.drawable.wode, MyFragment.class)
                 .isShowDivider(false)
                 .setOnTabChangeListener(new BottomTabBar.OnTabChangeListener() {
                     @Override
