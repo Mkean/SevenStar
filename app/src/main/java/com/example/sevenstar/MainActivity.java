@@ -4,16 +4,13 @@ package com.example.sevenstar;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.widget.TextView;
 
-import com.example.sevenstar.activity.BaseActivity;
-import com.example.sevenstar.addressbook.fragment.AddressBookFragment;
-import com.example.sevenstar.addressbook.fragment.ScienceCircleFragment;
+import com.example.sevenstar.fragment.addressBook.AddressBookFragment;
+import com.example.sevenstar.fragment.scienceCircle.ScienceCircleFragment;
 
-import com.example.sevenstar.login.presenter.LoginPresenter;
-import com.example.sevenstar.my.fragment.MyFragment;
+import com.example.sevenstar.fragment.userSelf.MyFragment;
 
-import com.example.sevenstar.addressbook.fragment.ConsultFragment;
+import com.example.sevenstar.fragment.consult.ConsultFragment;
 
 import com.hjm.bottomtabbar.BottomTabBar;
 

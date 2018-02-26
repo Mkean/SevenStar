@@ -1,4 +1,4 @@
-package com.example.sevenstar.addressbook.fragment;
+package com.example.sevenstar.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,8 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
-
-import com.example.sevenstar.R;
 
 /**
  * Created by 子非鱼 on 2018/2/26.

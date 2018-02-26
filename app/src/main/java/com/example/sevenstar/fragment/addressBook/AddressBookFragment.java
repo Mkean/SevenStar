@@ -1,4 +1,4 @@
-package com.example.sevenstar.addressbook.fragment;
+package com.example.sevenstar.fragment.addressBook;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -14,9 +14,11 @@ import android.widget.TextView;
 
 import com.example.sevenstar.R;
 import com.example.sevenstar.custom.BanViewPager;
+import com.example.sevenstar.fragment.addressBook.contacts.ContactsFragment;
+import com.example.sevenstar.fragment.addressBook.friends.FriendsFragment;
+import com.example.sevenstar.fragment.addressBook.group.GroupFragment;
 
 import java.util.ArrayList;
-import java.util.zip.Inflater;
 
 /**
  * Created by j on 18.2.24.
@@ -48,9 +50,9 @@ public class AddressBookFragment extends Fragment {
 
     private void initContent() {
         fragmentList = new ArrayList<Fragment>();
-        fragmentList.add(new ABFragment1());
-        fragmentList.add(new ABFragment2());
-        fragmentList.add(new ABFragment3());
+        fragmentList.add(new ContactsFragment());
+        fragmentList.add(new FriendsFragment());
+        fragmentList.add(new GroupFragment());
         titleList = new ArrayList<String>();
         titleList.add("手机通讯录");
         titleList.add("我的好友");

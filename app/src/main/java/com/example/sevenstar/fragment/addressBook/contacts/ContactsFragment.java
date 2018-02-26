@@ -1,20 +1,16 @@
-package com.example.sevenstar.addressbook.fragment;
+package com.example.sevenstar.fragment.addressBook.contacts;
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.example.sevenstar.R;
+import com.example.sevenstar.fragment.BaseFragment;
 
 /**
  * Created by j on 18.2.25.
+ * 这是通讯录里的第一个Fragment手机通讯录
  */
 
-public class ScienceCircleFragment extends BaseFragment {
-
+public class ContactsFragment extends BaseFragment {
 
     @Override
     public void initView(View view) {
@@ -31,8 +27,10 @@ public class ScienceCircleFragment extends BaseFragment {
         super.setListener();
     }
 
+
     @Override
     protected int getLayout() {
-        return R.layout.science_sircle_fraent;
+        return R.layout.ab_fragment1;
     }
+
 }

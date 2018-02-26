@@ -1,15 +1,10 @@
-package com.example.sevenstar.my.fragment;
+package com.example.sevenstar.fragment.userSelf;
 
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.example.sevenstar.R;
-import com.example.sevenstar.addressbook.fragment.BaseFragment;
+import com.example.sevenstar.fragment.BaseFragment;
 
 /**
  * Created by j on 18.2.25.

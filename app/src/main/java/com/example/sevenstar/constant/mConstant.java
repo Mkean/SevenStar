@@ -24,4 +24,7 @@ public class mConstant {
 
     //忘记密码（修改密码）
     public static final String Forget = "kjbd/user/modifyPassword";
+
+    //查询好友列表
+    public static final String findFriends = "kjbd/friendship/findFriend";
 }
