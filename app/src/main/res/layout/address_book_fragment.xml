@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/dray"
     android:orientation="vertical">
 
     <include layout="@layout/interface_title" />
@@ -10,7 +11,8 @@
     <LinearLayout
         android:id="@+id/newfriend"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/zdycircle"
         android:orientation="horizontal">
 
@@ -21,7 +23,7 @@
             android:layout_marginLeft="15dp"
             android:layout_weight="1"
             android:text="新朋友"
-            android:textSize="25sp" />
+            android:textSize="22sp" />
 
         <ImageView
             android:layout_width="40dp"
@@ -33,21 +35,22 @@
     </LinearLayout>
 
     <android.support.design.widget.TabLayout
-        android:id="@+id/tablayout"
+        android:id="@+id/tabLayout"
+        style="MyTabLayoutTextAppearance"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        app:tabSelectedTextColor="#f00"
-        app:tabTextColor="#000"
-        app:tabMode="fixed"
-        app:tabGravity="center" />
+        android:layout_height="50dp"
+        app:tabIndicatorColor="@color/colorPrimary"
 
-    <android.support.v4.view.ViewPager
+        app:tabSelectedTextColor="@color/colorPrimary" />
+
+    <com.example.sevenstar.custom.BanViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:isScrollContainer="true">
 
-    </android.support.v4.view.ViewPager>
+    </com.example.sevenstar.custom.BanViewPager>
 
 
 </LinearLayout>
