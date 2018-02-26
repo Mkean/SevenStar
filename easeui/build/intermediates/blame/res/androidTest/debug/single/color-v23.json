@@ -4,8 +4,24 @@
         "source": "C:\\Users\\j\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-24.2.1.aar\\5ab8790f0494373710f9100c657d689f\\res\\color-v23\\abc_color_highlight_material.xml"
     },
     {
+        "merged": "G:\\TXT\\workpace\\SevenStar\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v23\\abc_tint_seek_thumb.xml",
+        "source": "C:\\Users\\samsung\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-24.2.1.aar\\b5293bc24244119ceba3417c5a871208\\res\\color-v23\\abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "G:\\TXT\\workpace\\SevenStar\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v23\\abc_tint_switch_track.xml",
+        "source": "C:\\Users\\samsung\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-24.2.1.aar\\b5293bc24244119ceba3417c5a871208\\res\\color-v23\\abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "G:\\TXT\\workpace\\SevenStar\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v23\\abc_tint_spinner.xml",
+        "source": "C:\\Users\\samsung\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-24.2.1.aar\\b5293bc24244119ceba3417c5a871208\\res\\color-v23\\abc_tint_spinner.xml"
+    },
+    {
         "merged": "D:\\SevenStar\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v23\\abc_tint_default.xml",
         "source": "C:\\Users\\j\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-24.2.1.aar\\5ab8790f0494373710f9100c657d689f\\res\\color-v23\\abc_tint_default.xml"
+    },
+    {
+        "merged": "G:\\TXT\\workpace\\SevenStar\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v23\\abc_tint_edittext.xml",
+        "source": "C:\\Users\\samsung\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-24.2.1.aar\\b5293bc24244119ceba3417c5a871208\\res\\color-v23\\abc_tint_edittext.xml"
     },
     {
         "merged": "D:\\SevenStar\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v23\\abc_tint_seek_thumb.xml",
@@ -24,12 +40,32 @@
         "source": "C:\\Users\\j\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-24.2.1.aar\\5ab8790f0494373710f9100c657d689f\\res\\color-v23\\abc_tint_spinner.xml"
     },
     {
+        "merged": "G:\\TXT\\workpace\\SevenStar\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v23\\abc_tint_btn_checkable.xml",
+        "source": "C:\\Users\\samsung\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-24.2.1.aar\\b5293bc24244119ceba3417c5a871208\\res\\color-v23\\abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "G:\\TXT\\workpace\\SevenStar\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v23\\abc_color_highlight_material.xml",
+        "source": "C:\\Users\\samsung\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-24.2.1.aar\\b5293bc24244119ceba3417c5a871208\\res\\color-v23\\abc_color_highlight_material.xml"
+    },
+    {
         "merged": "D:\\SevenStar\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v23\\abc_btn_colored_borderless_text_material.xml",
         "source": "C:\\Users\\j\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-24.2.1.aar\\5ab8790f0494373710f9100c657d689f\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
     },
     {
+        "merged": "G:\\TXT\\workpace\\SevenStar\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v23\\abc_tint_switch_thumb.xml",
+        "source": "C:\\Users\\samsung\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-24.2.1.aar\\b5293bc24244119ceba3417c5a871208\\res\\color-v23\\abc_tint_switch_thumb.xml"
+    },
+    {
         "merged": "D:\\SevenStar\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v23\\abc_tint_edittext.xml",
         "source": "C:\\Users\\j\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-24.2.1.aar\\5ab8790f0494373710f9100c657d689f\\res\\color-v23\\abc_tint_edittext.xml"
+    },
+    {
+        "merged": "G:\\TXT\\workpace\\SevenStar\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v23\\abc_btn_colored_borderless_text_material.xml",
+        "source": "C:\\Users\\samsung\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-24.2.1.aar\\b5293bc24244119ceba3417c5a871208\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
+    },
+    {
+        "merged": "G:\\TXT\\workpace\\SevenStar\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v23\\abc_tint_default.xml",
+        "source": "C:\\Users\\samsung\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-24.2.1.aar\\b5293bc24244119ceba3417c5a871208\\res\\color-v23\\abc_tint_default.xml"
     },
     {
         "merged": "D:\\SevenStar\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v23\\abc_tint_btn_checkable.xml",

@@ -13,7 +13,7 @@ import com.example.sevenstar.R;
  * Created by j on 18.2.25.
  */
 
-public class ScienceSircleFragment extends Fragment {
+public class ScienceCircleFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
