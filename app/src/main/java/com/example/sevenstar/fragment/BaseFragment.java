@@ -15,16 +15,31 @@ import android.widget.Toast;
  */
 
 public abstract class BaseFragment extends Fragment {
+    protected boolean isVisible;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = View.inflate(getActivity(), getLayout(), null);
+        View view = inflater.inflate(getLayout(), container, false);
         initView(view);
         initData();
         setListener();
         return view;
 
     }
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (isVisibleToUser) {
+            isVisible = true;
+            onVisible();
+        } else {
+            isVisible = false;
+        }
+    }
+
+    protected abstract void onVisible();
 
     public void setListener() {
 

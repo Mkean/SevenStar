@@ -116,7 +116,10 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
     public void LoginSuccess(LoginBean loginBean) {
         if (loginBean.getStatus().equals("0000")) {
             $toast(loginBean.getMessage());
-            $startActivity(MainActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putString("sessionId", loginBean.getResult().getSessionId());
+            bundle.putString("userId", loginBean.getResult().getUserId());
+            $startActivity(MainActivity.class, bundle);
             finish();
         } else {
             checkoutImg();

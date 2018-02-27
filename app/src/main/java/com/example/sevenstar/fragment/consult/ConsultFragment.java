@@ -22,6 +22,11 @@ public class ConsultFragment extends BaseFragment {
     }
 
     @Override
+    protected void onVisible() {
+
+    }
+
+    @Override
     public void setListener() {
         super.setListener();
     }
