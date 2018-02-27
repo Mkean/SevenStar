@@ -1,5 +1,6 @@
 package com.example.sevenstar.fragment.addressBook.friends;
 
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -52,7 +53,10 @@ public class NewFriendsActivity extends BaseActivity implements View.OnClickList
         back.setVisibility(View.VISIBLE);
         operation.setVisibility(View.VISIBLE);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        nFIPresenter.newFriendsInform("2908674774","1");
+        SharedPreferences parameter = getSharedPreferences("parameter", 0);
+        String userId = parameter.getString("userId", "");
+        String sessionId = parameter.getString("sessionId", "");
+        nFIPresenter.newFriendsInform(sessionId,userId);
     }
     //点击事件监听
     @Override

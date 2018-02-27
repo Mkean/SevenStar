@@ -1,6 +1,7 @@
 package com.example.sevenstar.fragment.addressBook;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -21,6 +22,7 @@ import com.example.sevenstar.custom.BanViewPager;
 import com.example.sevenstar.fragment.BaseFragment;
 import com.example.sevenstar.fragment.addressBook.contacts.ContactsFragment;
 import com.example.sevenstar.fragment.addressBook.friends.FriendsFragment;
+import com.example.sevenstar.fragment.addressBook.friends.NewFriendsActivity;
 import com.example.sevenstar.fragment.addressBook.group.GroupFragment;
 
 import java.util.ArrayList;
@@ -48,7 +50,6 @@ public class AddressBookFragment extends BaseFragment {
         if (!isPrepared || !isVisible) {
             return;
         }
-
     }
 
     private void initContent() {
@@ -70,7 +71,7 @@ public class AddressBookFragment extends BaseFragment {
         tabLayout = view.findViewById(R.id.tabLayout);
         viewPager = view.findViewById(R.id.viewpager);
         neeFriend = view.findViewById(R.id.newfriend);
-        //对tabBar的数据进行
+        //对tabBar的数据进行设置
         initContent();
     }
 
@@ -90,6 +91,7 @@ public class AddressBookFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 //跳转到新朋友界面
+                startActivity(new Intent(getActivity(), NewFriendsActivity.class));
             }
         });
 
