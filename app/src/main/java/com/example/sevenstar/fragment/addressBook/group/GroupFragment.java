@@ -1,6 +1,8 @@
 package com.example.sevenstar.fragment.addressBook.group;
 
+import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.sevenstar.R;
 import com.example.sevenstar.fragment.BaseFragment;
@@ -11,14 +13,39 @@ import com.example.sevenstar.fragment.BaseFragment;
  */
 
 public class GroupFragment extends BaseFragment {
+    private boolean isPrepared;
+
     @Override
     public void initView(View view) {
         super.initView(view);
+
     }
 
     @Override
     public void initData() {
         super.initData();
+        isPrepared = true;
+        onVisible();
+
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (getUserVisibleHint()) {
+            onVisible();
+        }
+    }
+
+    @Override
+    protected void onVisible() {
+        if (!isPrepared || !isVisible) {
+            return;
+        }
+        Bundle bundle = getArguments();
+        String userId = bundle.getString("userId");
+        String sessionId = bundle.getString("sessionId");
+
     }
 
     @Override

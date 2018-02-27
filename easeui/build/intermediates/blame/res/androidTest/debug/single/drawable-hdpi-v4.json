@@ -12,12 +12,12 @@
         "source": "D:\\SevenStar\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ease_seabar_input.9.png"
     },
     {
-        "merged": "G:\\TXT\\workpace\\SevenStar\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ease_chatto_voice_playing_f1.png",
-        "source": "G:\\TXT\\workpace\\SevenStar\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ease_chatto_voice_playing_f1.png"
-    },
-    {
         "merged": "G:\\TXT\\workpace\\SevenStar\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ease_chat_face_pressed.png",
         "source": "G:\\TXT\\workpace\\SevenStar\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ease_chat_face_pressed.png"
+    },
+    {
+        "merged": "G:\\TXT\\workpace\\SevenStar\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ease_chatto_voice_playing_f1.png",
+        "source": "G:\\TXT\\workpace\\SevenStar\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ease_chatto_voice_playing_f1.png"
     },
     {
         "merged": "G:\\TXT\\workpace\\SevenStar\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\googleg_disabled_color_18.png",
@@ -72,12 +72,12 @@
         "source": "D:\\SevenStar\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ease_record_animate_05.png"
     },
     {
-        "merged": "G:\\TXT\\workpace\\SevenStar\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ease_contact_list_normal.png",
-        "source": "G:\\TXT\\workpace\\SevenStar\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ease_contact_list_normal.png"
-    },
-    {
         "merged": "G:\\TXT\\workpace\\SevenStar\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ease_conversation_selected.png",
         "source": "G:\\TXT\\workpace\\SevenStar\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ease_conversation_selected.png"
+    },
+    {
+        "merged": "G:\\TXT\\workpace\\SevenStar\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ease_contact_list_normal.png",
+        "source": "G:\\TXT\\workpace\\SevenStar\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ease_contact_list_normal.png"
     },
     {
         "merged": "D:\\SevenStar\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png",

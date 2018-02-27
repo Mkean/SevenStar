@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.sevenstar.MainActivity">
 
     <com.hjm.bottomtabbar.BottomTabBar
-        android:layout_alignParentBottom="true"
         android:id="@+id/bottomTabBar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </com.hjm.bottomtabbar.BottomTabBar>
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_weight="1"></com.hjm.bottomtabbar.BottomTabBar>
 
 </LinearLayout>

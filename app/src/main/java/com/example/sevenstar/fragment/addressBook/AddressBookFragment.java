@@ -1,19 +1,24 @@
 package com.example.sevenstar.fragment.addressBook;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.sevenstar.R;
 import com.example.sevenstar.custom.BanViewPager;
+import com.example.sevenstar.fragment.BaseFragment;
 import com.example.sevenstar.fragment.addressBook.contacts.ContactsFragment;
 import com.example.sevenstar.fragment.addressBook.friends.FriendsFragment;
 import com.example.sevenstar.fragment.addressBook.group.GroupFragment;
@@ -24,8 +29,9 @@ import java.util.ArrayList;
  * Created by j on 18.2.24.
  */
 
-public class AddressBookFragment extends Fragment {
+public class AddressBookFragment extends BaseFragment {
 
+    private boolean isPrepared;
     private View view;
     private TextView addressBookTitleName;
     private TabLayout tabLayout;
@@ -33,19 +39,16 @@ public class AddressBookFragment extends Fragment {
     ArrayList<Fragment> fragmentList;
     ArrayList<String> titleList;
     private LinearLayout neeFriend;
+    private String userId;
+    private String sessionId;
 
-    @Nullable
+
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = LayoutInflater.from(getActivity()).inflate(R.layout.address_book_fragment, null);
-        //初始化View
-        initView();
-        //对tabBar的数据进行
-        initContent();
-        //对控件进行赋值
-        initData();
+    protected void onVisible() {
+        if (!isPrepared || !isVisible) {
+            return;
+        }
 
-        return view;
     }
 
     private void initContent() {
@@ -59,11 +62,24 @@ public class AddressBookFragment extends Fragment {
         titleList.add("我的群组");
     }
 
-    private void initData() {
+    @Override
+    public void initView(View view) {
+        super.initView(view);
+        isPrepared = true;
+        addressBookTitleName = view.findViewById(R.id.title_name);
+        tabLayout = view.findViewById(R.id.tabLayout);
+        viewPager = view.findViewById(R.id.viewpager);
+        neeFriend = view.findViewById(R.id.newfriend);
+        //对tabBar的数据进行
+        initContent();
+    }
+
+    @Override
+    public void initData() {
         //设置标题头
         addressBookTitleName.setText(R.string.addressbook_title_name);
         //设置TabLayout
-        MPagerAdapter mPagerAdapter = new MPagerAdapter(getActivity().getSupportFragmentManager());
+        MPagerAdapter mPagerAdapter = new MPagerAdapter(getChildFragmentManager());
         viewPager.setAdapter(mPagerAdapter);
         //设置TabLayout的模式
         tabLayout.setTabMode(TabLayout.GRAVITY_CENTER);
@@ -77,13 +93,15 @@ public class AddressBookFragment extends Fragment {
             }
         });
 
+        SharedPreferences parameter = getContext().getSharedPreferences("parameter", 0);
+        userId = parameter.getString("userId", "");
+        sessionId = parameter.getString("sessionId", "");
     }
 
-    private void initView() {
-        addressBookTitleName = view.findViewById(R.id.title_name);
-        tabLayout = view.findViewById(R.id.tabLayout);
-        viewPager = view.findViewById(R.id.viewpager);
-        neeFriend = view.findViewById(R.id.newfriend);
+
+    @Override
+    protected int getLayout() {
+        return R.layout.address_book_fragment;
     }
 
     class MPagerAdapter extends FragmentPagerAdapter {
@@ -94,7 +112,12 @@ public class AddressBookFragment extends Fragment {
 
         @Override
         public Fragment getItem(int position) {
-            return fragmentList.get(position);
+            Bundle bundle = new Bundle();
+            bundle.putString("userId", userId);
+            bundle.putString("sessionId", sessionId);
+            Fragment fragment = fragmentList.get(position);
+            fragment.setArguments(bundle);
+            return fragment;
         }
 
         @Override
