@@ -27,4 +27,7 @@ public class mConstant {
 
     //查询好友列表
     public static final String findFriends = "kjbd/friendship/findFriend";
+
+    //新朋友界面我的消息
+    public static final String NewFriendsInform = "kjbd/friendship/selectMyNotice";
 }

@@ -10,6 +10,7 @@ import com.example.sevenstar.fragment.addressBook.friends.view.FriendsView;
 import com.hyphenate.easeui.domain.EaseUser;
 import com.hyphenate.easeui.widget.EaseContactList;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -34,7 +35,12 @@ public class FriendsFragment extends BaseFragment implements FriendsView {
         friendsPresenter = new FriendsPresenter(this);
         //初始化时需要传入联系人list
         List<EaseUser> contactList;
-//        mEaseList.init();
+
+//        contactList = new ArrayList<>();
+
+//        contactList.add(new EaseUser());
+
+//        mEaseList.init(contactList);
         //刷新列表
         mEaseList.refresh();
 

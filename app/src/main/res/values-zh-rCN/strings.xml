@@ -4,5 +4,6 @@
     <string name="register_title_name">注册</string>
     <string name="forget_title_name">忘记密码</string>
     <string name="addressbook_title_name">通讯录</string>
+    <string name="addressbook_new_friends">新朋友</string>
 
 </resources>

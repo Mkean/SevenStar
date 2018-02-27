@@ -12,20 +12,20 @@
         "source": "C:\\Users\\samsung\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-24.2.1.aar\\b5293bc24244119ceba3417c5a871208\\res\\drawable-xhdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
     },
     {
-        "merged": "G:\\TXT\\workpace\\SevenStar\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\abc_list_divider_mtrl_alpha.9.png",
-        "source": "C:\\Users\\samsung\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-24.2.1.aar\\b5293bc24244119ceba3417c5a871208\\res\\drawable-xhdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
-    },
-    {
-        "merged": "G:\\TXT\\workpace\\SevenStar\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png",
-        "source": "C:\\Users\\samsung\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-24.2.1.aar\\b5293bc24244119ceba3417c5a871208\\res\\drawable-xhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
+        "merged": "D:\\SevenStar\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\ease_unread_dot.9.png",
+        "source": "D:\\SevenStar\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ease_unread_dot.9.png"
     },
     {
         "merged": "D:\\SevenStar\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\abc_list_selector_disabled_holo_light.9.png",
         "source": "C:\\Users\\j\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-24.2.1.aar\\5ab8790f0494373710f9100c657d689f\\res\\drawable-xhdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
     },
     {
-        "merged": "D:\\SevenStar\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\ease_unread_dot.9.png",
-        "source": "D:\\SevenStar\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ease_unread_dot.9.png"
+        "merged": "G:\\TXT\\workpace\\SevenStar\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png",
+        "source": "C:\\Users\\samsung\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-24.2.1.aar\\b5293bc24244119ceba3417c5a871208\\res\\drawable-xhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
+    },
+    {
+        "merged": "G:\\TXT\\workpace\\SevenStar\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\abc_list_divider_mtrl_alpha.9.png",
+        "source": "C:\\Users\\samsung\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-24.2.1.aar\\b5293bc24244119ceba3417c5a871208\\res\\drawable-xhdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
     },
     {
         "merged": "D:\\SevenStar\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\abc_btn_radio_to_on_mtrl_015.png",

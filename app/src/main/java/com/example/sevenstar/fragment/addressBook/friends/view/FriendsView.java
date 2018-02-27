@@ -11,4 +11,6 @@ public interface FriendsView extends IView {
     void findSuccess(FriendsBean friendsBean);
 
     void findFailed(Throwable e);
+
+
 }

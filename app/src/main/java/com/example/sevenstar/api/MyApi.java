@@ -4,6 +4,7 @@ import com.example.sevenstar.bean.SMSBean;
 import com.example.sevenstar.constant.mConstant;
 import com.example.sevenstar.forgetPassword.bean.ForgetBean;
 import com.example.sevenstar.fragment.addressBook.friends.bean.FriendsBean;
+import com.example.sevenstar.fragment.addressBook.friends.bean.NewFriendInformBean;
 import com.example.sevenstar.login.bean.LoginBean;
 import com.example.sevenstar.register.bean.RegisterBean;
 
@@ -43,4 +44,10 @@ public interface MyApi {
     //查询好友列表
     @GET(mConstant.findFriends)
     Observable<FriendsBean> findFriends(@Header("sessionId") String sessionId, @Header("userId") String userId);
+
+    //好友消息
+    @GET(mConstant.NewFriendsInform)
+    Observable<NewFriendInformBean> NewFriendsInfrom(@Header("sessionId") String sessionId, @Header("userId") String userId);
+
+
 }
