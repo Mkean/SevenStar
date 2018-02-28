@@ -2,17 +2,25 @@ package com.example.sevenstar.fragment.addressBook.friends;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.sevenstar.R;
 import com.example.sevenstar.fragment.BaseFragment;
 import com.example.sevenstar.fragment.addressBook.friends.bean.FriendsBean;
 import com.example.sevenstar.fragment.addressBook.friends.presenter.FriendsPresenter;
 import com.example.sevenstar.fragment.addressBook.friends.view.FriendsView;
+import com.hyphenate.chat.EMClient;
+import com.hyphenate.easeui.EaseUI;
 import com.hyphenate.easeui.domain.EaseUser;
 import com.hyphenate.easeui.widget.EaseContactList;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import static com.hyphenate.easeui.utils.EaseUserUtils.getUserInfo;
 
 /**
  * Created by j on 18.2.25.
@@ -24,6 +32,7 @@ public class FriendsFragment extends BaseFragment implements FriendsView {
     private EaseContactList mEaseList;
     private FriendsPresenter friendsPresenter;
     private boolean isPrepared;
+    private EaseUI easeUI;
 
     @Override
     public void initView(View view) {
@@ -45,12 +54,6 @@ public class FriendsFragment extends BaseFragment implements FriendsView {
         super.initData();
         isPrepared = true;
         onVisible();
-        friendsPresenter = new FriendsPresenter(this);
-        //初始化时需要传入联系人list
-        List<EaseUser> contactList;
-//        mEaseList.init();
-        //刷新列表
-        mEaseList.refresh();
     }
 
     @Override
@@ -61,6 +64,8 @@ public class FriendsFragment extends BaseFragment implements FriendsView {
         Bundle bundle = getArguments();
         String userId = bundle.getString("userId");
         String sessionId = bundle.getString("sessionId");
+        friendsPresenter = new FriendsPresenter(this);
+        friendsPresenter.findFriends(sessionId, userId);
     }
 
     @Override
@@ -76,12 +81,18 @@ public class FriendsFragment extends BaseFragment implements FriendsView {
 
     @Override
     public void findSuccess(FriendsBean friendsBean) {
+        if (friendsBean.getStatus().equals("0000")) {
 
+            mEaseList.refresh();
+        } else {
+            $toast(friendsBean.getMessage());
+        }
     }
 
     @Override
     public void findFailed(Throwable e) {
-
+        $Log(e.getMessage());
+        $toast("网络出错！");
     }
 
     @Override
@@ -91,4 +102,6 @@ public class FriendsFragment extends BaseFragment implements FriendsView {
             friendsPresenter.detach();
         }
     }
+
+
 }

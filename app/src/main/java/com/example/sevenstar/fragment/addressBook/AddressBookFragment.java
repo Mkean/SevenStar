@@ -21,9 +21,19 @@ import com.example.sevenstar.custom.BanViewPager;
 import com.example.sevenstar.fragment.BaseFragment;
 import com.example.sevenstar.fragment.addressBook.contacts.ContactsFragment;
 import com.example.sevenstar.fragment.addressBook.friends.FriendsFragment;
+import com.example.sevenstar.fragment.addressBook.friends.bean.FriendsBean;
+import com.example.sevenstar.fragment.addressBook.friends.presenter.FriendsPresenter;
+import com.example.sevenstar.fragment.addressBook.friends.view.FriendsView;
 import com.example.sevenstar.fragment.addressBook.group.GroupFragment;
+import com.hyphenate.chat.EMClient;
+import com.hyphenate.easeui.domain.EaseUser;
+import com.hyphenate.easeui.ui.EaseContactListFragment;
+import com.hyphenate.exceptions.HyphenateException;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by j on 18.2.24.
@@ -32,7 +42,6 @@ import java.util.ArrayList;
 public class AddressBookFragment extends BaseFragment {
 
     private boolean isPrepared;
-    private View view;
     private TextView addressBookTitleName;
     private TabLayout tabLayout;
     private BanViewPager viewPager;
@@ -41,6 +50,10 @@ public class AddressBookFragment extends BaseFragment {
     private LinearLayout neeFriend;
     private String userId;
     private String sessionId;
+    private ContactsFragment contactsFragment;
+    private EaseContactListFragment friendsFragment;
+    private GroupFragment groupFragment;
+    private FriendsPresenter friendsPresenter;
 
 
     @Override
@@ -53,9 +66,12 @@ public class AddressBookFragment extends BaseFragment {
 
     private void initContent() {
         fragmentList = new ArrayList<Fragment>();
-        fragmentList.add(new ContactsFragment());
-        fragmentList.add(new FriendsFragment());
-        fragmentList.add(new GroupFragment());
+        contactsFragment = new ContactsFragment();
+        friendsFragment = new EaseContactListFragment();
+        groupFragment = new GroupFragment();
+        fragmentList.add(contactsFragment);
+        fragmentList.add(friendsFragment);
+        fragmentList.add(groupFragment);
         titleList = new ArrayList<String>();
         titleList.add("手机通讯录");
         titleList.add("我的好友");
@@ -96,6 +112,9 @@ public class AddressBookFragment extends BaseFragment {
         SharedPreferences parameter = getContext().getSharedPreferences("parameter", 0);
         userId = parameter.getString("userId", "");
         sessionId = parameter.getString("sessionId", "");
+
+
+
     }
 
 
@@ -103,6 +122,7 @@ public class AddressBookFragment extends BaseFragment {
     protected int getLayout() {
         return R.layout.address_book_fragment;
     }
+
 
     class MPagerAdapter extends FragmentPagerAdapter {
 

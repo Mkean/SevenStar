@@ -1,5 +1,7 @@
 package com.example.sevenstar.fragment.addressBook.friends.bean;
 
+import com.hyphenate.easeui.domain.EaseUser;
+
 import java.util.List;
 
 /**
@@ -17,6 +19,7 @@ public class FriendsBean {
     private String message;
     private String status;
     private List<ResultBean> result;
+
 
     public String getMessage() {
         return message;
@@ -42,7 +45,7 @@ public class FriendsBean {
         this.result = result;
     }
 
-    public static class ResultBean {
+    public static class ResultBean extends EaseUser {
         /**
          * id : 2
          * img : https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=114395345,3231482796&fm=27&gp=0.jpg
@@ -52,6 +55,11 @@ public class FriendsBean {
         private int id;
         private String img;
         private String nickName;
+
+        public ResultBean(String username) {
+            super(username);
+        }
+
 
         public int getId() {
             return id;
