@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.SectionIndexer;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.hyphenate.easeui.EaseUI;
 import com.hyphenate.easeui.R;
 import com.hyphenate.easeui.domain.EaseAvatarOptions;
@@ -26,7 +27,7 @@ import com.hyphenate.util.EMLog;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EaseContactAdapter extends ArrayAdapter<EaseUser> implements SectionIndexer{
+public class EaseContactAdapter extends ArrayAdapter<EaseUser> implements SectionIndexer {
     private static final String TAG = "ContactAdapter";
     List<String> list;
     List<EaseUser> userList;
@@ -46,18 +47,19 @@ public class EaseContactAdapter extends ArrayAdapter<EaseUser> implements Sectio
         copyUserList.addAll(objects);
         layoutInflater = LayoutInflater.from(context);
     }
-    
+
     private static class ViewHolder {
         ImageView avatar;
         TextView nameView;
         TextView headerView;
     }
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
-        if(convertView == null){
+        if (convertView == null) {
             holder = new ViewHolder();
-            if(res == 0)
+            if (res == 0)
                 convertView = layoutInflater.inflate(R.layout.ease_row_contact, parent, false);
             else
                 convertView = layoutInflater.inflate(res, null);
@@ -65,16 +67,16 @@ public class EaseContactAdapter extends ArrayAdapter<EaseUser> implements Sectio
             holder.nameView = (TextView) convertView.findViewById(R.id.name);
             holder.headerView = (TextView) convertView.findViewById(R.id.header);
             convertView.setTag(holder);
-        }else{
+        } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        
+
         EaseUser user = getItem(position);
-        if(user == null)
+        if (user == null)
             Log.d("ContactAdapter", position + "");
         String username = user.getUsername();
         String header = user.getInitialLetter();
-        
+
         if (position == 0 || header != null && !header.equals(getItem(position - 1).getInitialLetter())) {
             if (TextUtils.isEmpty(header)) {
                 holder.headerView.setVisibility(View.GONE);
@@ -87,7 +89,7 @@ public class EaseContactAdapter extends ArrayAdapter<EaseUser> implements Sectio
         }
 
         EaseAvatarOptions avatarOptions = EaseUI.getInstance().getAvatarOptions();
-        if(avatarOptions != null && holder.avatar instanceof EaseImageView) {
+        if (avatarOptions != null && holder.avatar instanceof EaseImageView) {
             EaseImageView avatarView = ((EaseImageView) holder.avatar);
             if (avatarOptions.getAvatarShape() != 0)
                 avatarView.setShapeType(avatarOptions.getAvatarShape());
@@ -99,27 +101,29 @@ public class EaseContactAdapter extends ArrayAdapter<EaseUser> implements Sectio
                 avatarView.setRadius(avatarOptions.getAvatarRadius());
         }
 
-        EaseUserUtils.setUserNick(username, holder.nameView);
-        EaseUserUtils.setUserAvatar(getContext(), username, holder.avatar);
-        
-       
-        if(primaryColor != 0)
+        Glide.with(getContext()).load(user.getAvatar()).into(holder.avatar);
+        holder.nameView.setText(user.getNickname());
+//        EaseUserUtils.setUserNick(username, holder.nameView);
+//        EaseUserUtils.setUserAvatar(getContext(), username, holder.avatar);
+
+
+        if (primaryColor != 0)
             holder.nameView.setTextColor(primaryColor);
-        if(primarySize != 0)
+        if (primarySize != 0)
             holder.nameView.setTextSize(TypedValue.COMPLEX_UNIT_PX, primarySize);
-        if(initialLetterBg != null)
+        if (initialLetterBg != null)
             holder.headerView.setBackgroundDrawable(initialLetterBg);
-        if(initialLetterColor != 0)
+        if (initialLetterColor != 0)
             holder.headerView.setTextColor(initialLetterColor);
-        
+
         return convertView;
     }
-    
+
     @Override
     public EaseUser getItem(int position) {
         return super.getItem(position);
     }
-    
+
     @Override
     public int getCount() {
         return super.getCount();
@@ -134,7 +138,7 @@ public class EaseContactAdapter extends ArrayAdapter<EaseUser> implements Sectio
     public int getSectionForPosition(int position) {
         return sectionOfPosition.get(position);
     }
-    
+
     @Override
     public Object[] getSections() {
         positionOfSection = new SparseIntArray();
@@ -157,18 +161,18 @@ public class EaseContactAdapter extends ArrayAdapter<EaseUser> implements Sectio
         }
         return list.toArray(new String[list.size()]);
     }
-    
+
     @Override
     public Filter getFilter() {
-        if(myFilter==null){
+        if (myFilter == null) {
             myFilter = new MyFilter(userList);
         }
         return myFilter;
     }
-    
-    protected class  MyFilter extends Filter{
+
+    protected class MyFilter extends Filter {
         List<EaseUser> mOriginalList = null;
-        
+
         public MyFilter(List<EaseUser> myList) {
             this.mOriginalList = myList;
         }
@@ -176,16 +180,16 @@ public class EaseContactAdapter extends ArrayAdapter<EaseUser> implements Sectio
         @Override
         protected synchronized FilterResults performFiltering(CharSequence prefix) {
             FilterResults results = new FilterResults();
-            if(mOriginalList==null){
+            if (mOriginalList == null) {
                 mOriginalList = new ArrayList<EaseUser>();
             }
             EMLog.d(TAG, "contacts original size: " + mOriginalList.size());
             EMLog.d(TAG, "contacts copy size: " + copyUserList.size());
-            
-            if(prefix==null || prefix.length()==0){
+
+            if (prefix == null || prefix.length() == 0) {
                 results.values = copyUserList;
                 results.count = copyUserList.size();
-            }else{
+            } else {
 
                 if (copyUserList.size() > mOriginalList.size()) {
                     mOriginalList = copyUserList;
@@ -193,18 +197,17 @@ public class EaseContactAdapter extends ArrayAdapter<EaseUser> implements Sectio
                 String prefixString = prefix.toString();
                 final int count = mOriginalList.size();
                 final ArrayList<EaseUser> newValues = new ArrayList<EaseUser>();
-                for(int i=0;i<count;i++){
+                for (int i = 0; i < count; i++) {
                     final EaseUser user = mOriginalList.get(i);
                     String username = user.getUsername();
-                    
-                    if(username.startsWith(prefixString)){
+
+                    if (username.startsWith(prefixString)) {
                         newValues.add(user);
-                    }
-                    else{
-                         final String[] words = username.split(" ");
-                         final int wordCount = words.length;
-    
-                         // Start at index 0, in case valueText starts with space(s)
+                    } else {
+                        final String[] words = username.split(" ");
+                        final int wordCount = words.length;
+
+                        // Start at index 0, in case valueText starts with space(s)
                         for (String word : words) {
                             if (word.startsWith(prefixString)) {
                                 newValues.add(user);
@@ -213,8 +216,8 @@ public class EaseContactAdapter extends ArrayAdapter<EaseUser> implements Sectio
                         }
                     }
                 }
-                results.values=newValues;
-                results.count=newValues.size();
+                results.values = newValues;
+                results.count = newValues.size();
             }
             EMLog.d(TAG, "contacts filter results size: " + results.count);
             return results;
@@ -222,9 +225,9 @@ public class EaseContactAdapter extends ArrayAdapter<EaseUser> implements Sectio
 
         @Override
         protected synchronized void publishResults(CharSequence constraint,
-                FilterResults results) {
+                                                   FilterResults results) {
             userList.clear();
-            userList.addAll((List<EaseUser>)results.values);
+            userList.addAll((List<EaseUser>) results.values);
             EMLog.d(TAG, "publish contacts filter results size: " + results.count);
             if (results.count > 0) {
                 notiyfyByFilter = true;
@@ -235,17 +238,17 @@ public class EaseContactAdapter extends ArrayAdapter<EaseUser> implements Sectio
             }
         }
     }
-    
-    
+
+
     @Override
     public void notifyDataSetChanged() {
         super.notifyDataSetChanged();
-        if(!notiyfyByFilter){
+        if (!notiyfyByFilter) {
             copyUserList.clear();
             copyUserList.addAll(userList);
         }
     }
-    
+
     protected int primaryColor;
     protected int primarySize;
     protected Drawable initialLetterBg;
@@ -271,5 +274,5 @@ public class EaseContactAdapter extends ArrayAdapter<EaseUser> implements Sectio
         this.initialLetterColor = initialLetterColor;
         return this;
     }
-    
+
 }

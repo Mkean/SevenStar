@@ -1,26 +1,31 @@
 package com.example.sevenstar.fragment.addressBook.friends;
 
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
+import android.view.Window;
 
 import com.example.sevenstar.R;
+import com.example.sevenstar.db.DemoDBManager;
 import com.example.sevenstar.fragment.BaseFragment;
 import com.example.sevenstar.fragment.addressBook.friends.bean.FriendsBean;
 import com.example.sevenstar.fragment.addressBook.friends.presenter.FriendsPresenter;
 import com.example.sevenstar.fragment.addressBook.friends.view.FriendsView;
-import com.hyphenate.chat.EMClient;
 import com.hyphenate.easeui.EaseUI;
 import com.hyphenate.easeui.domain.EaseUser;
+import com.hyphenate.easeui.ui.EaseBaseFragment;
+import com.hyphenate.easeui.ui.EaseContactListFragment;
 import com.hyphenate.easeui.widget.EaseContactList;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
-import static com.hyphenate.easeui.utils.EaseUserUtils.getUserInfo;
 
 /**
  * Created by j on 18.2.25.
@@ -29,15 +34,13 @@ import static com.hyphenate.easeui.utils.EaseUserUtils.getUserInfo;
 
 public class FriendsFragment extends BaseFragment implements FriendsView {
 
-    private EaseContactList mEaseList;
     private FriendsPresenter friendsPresenter;
     private boolean isPrepared;
-    private EaseUI easeUI;
+    private EaseContactListFragment contactListFragment;
 
     @Override
     public void initView(View view) {
         super.initView(view);
-        mEaseList = view.findViewById(R.id.contact_list);
     }
 
 
@@ -54,6 +57,7 @@ public class FriendsFragment extends BaseFragment implements FriendsView {
         super.initData();
         isPrepared = true;
         onVisible();
+
     }
 
     @Override
@@ -61,11 +65,29 @@ public class FriendsFragment extends BaseFragment implements FriendsView {
         if (!isPrepared || !isVisible) {
             return;
         }
+
         Bundle bundle = getArguments();
         String userId = bundle.getString("userId");
         String sessionId = bundle.getString("sessionId");
         friendsPresenter = new FriendsPresenter(this);
         friendsPresenter.findFriends(sessionId, userId);
+    }
+
+    private Map<String, EaseUser> getContactsMap(FriendsBean friendsBean) {
+        Map<String, EaseUser> map = new HashMap<>();
+        List<FriendsBean.ResultBean> list = friendsBean.getResult();
+        if (list == null) {
+            return null;
+        } else {
+            for (int i = 0; i < list.size(); i++) {
+                EaseUser easeUser = new EaseUser(list.get(i).getPhone());
+                easeUser.setAvatar(list.get(i).getImg());
+                easeUser.setNickname(list.get(i).getPhone());
+                easeUser.setNick(list.get(i).getNickName());
+                map.put(String.valueOf(list.get(i).getId()), easeUser);
+            }
+        }
+        return map;
     }
 
     @Override
@@ -82,8 +104,7 @@ public class FriendsFragment extends BaseFragment implements FriendsView {
     @Override
     public void findSuccess(FriendsBean friendsBean) {
         if (friendsBean.getStatus().equals("0000")) {
-
-            mEaseList.refresh();
+            setEaseList(friendsBean);
         } else {
             $toast(friendsBean.getMessage());
         }
@@ -93,6 +114,22 @@ public class FriendsFragment extends BaseFragment implements FriendsView {
     public void findFailed(Throwable e) {
         $Log(e.getMessage());
         $toast("网络出错！");
+    }
+
+    private void setEaseList(FriendsBean friendsBean) {
+
+        contactListFragment = new EaseContactListFragment();
+        contactListFragment.hideTitleBar();
+        contactListFragment.setContactsMap(getContactsMap(friendsBean));
+        contactListFragment.setContactListItemClickListener(new EaseContactListFragment.EaseContactListItemClickListener() {
+            @Override
+            public void onListItemClicked(EaseUser user) {
+                
+            }
+        });
+
+        getActivity().getSupportFragmentManager().beginTransaction()
+                .add(R.id.contact_list, contactListFragment).commit();
     }
 
     @Override

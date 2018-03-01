@@ -51,7 +51,7 @@ public class AddressBookFragment extends BaseFragment {
     private String userId;
     private String sessionId;
     private ContactsFragment contactsFragment;
-    private EaseContactListFragment friendsFragment;
+    private FriendsFragment friendsFragment;
     private GroupFragment groupFragment;
     private FriendsPresenter friendsPresenter;
 
@@ -67,7 +67,7 @@ public class AddressBookFragment extends BaseFragment {
     private void initContent() {
         fragmentList = new ArrayList<Fragment>();
         contactsFragment = new ContactsFragment();
-        friendsFragment = new EaseContactListFragment();
+        friendsFragment = new FriendsFragment();
         groupFragment = new GroupFragment();
         fragmentList.add(contactsFragment);
         fragmentList.add(friendsFragment);
@@ -112,7 +112,6 @@ public class AddressBookFragment extends BaseFragment {
         SharedPreferences parameter = getContext().getSharedPreferences("parameter", 0);
         userId = parameter.getString("userId", "");
         sessionId = parameter.getString("sessionId", "");
-
 
 
     }

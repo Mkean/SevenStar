@@ -13,11 +13,14 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.sevenstar.MainActivity;
 import com.example.sevenstar.R;
 import com.example.sevenstar.activity.BaseActivity;
+import com.example.sevenstar.app.MyApp;
+import com.example.sevenstar.constant.APPConfig;
 import com.example.sevenstar.forgetPassword.ForgetActivity;
 import com.example.sevenstar.login.bean.LoginBean;
 import com.example.sevenstar.login.presenter.LoginPresenter;
 import com.example.sevenstar.login.view.LoginView;
 import com.example.sevenstar.register.RegisterActivity;
+import com.example.sevenstar.utils.SharedPreferencesUtils;
 
 public class LoginActivity extends BaseActivity implements View.OnClickListener, LoginView {
 
@@ -119,6 +122,10 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
             Bundle bundle = new Bundle();
             bundle.putString("sessionId", loginBean.getResult().getSessionId());
             bundle.putString("userId", loginBean.getResult().getUserId());
+            SharedPreferencesUtils.setParam(LoginActivity.this, APPConfig.USER_NAME, loginBean.getResult().getUserName());
+            SharedPreferencesUtils.setParam(LoginActivity.this, APPConfig.PASS_WORD, loginBean.getResult().getPassword());
+            SharedPreferencesUtils.setParam(LoginActivity.this, APPConfig.SESSION_ID, loginBean.getResult().getSessionId());
+            SharedPreferencesUtils.setParam(LoginActivity.this, APPConfig.USER_ID, loginBean.getResult().getUserId());
             $startActivity(MainActivity.class, bundle);
             finish();
         } else {

@@ -21,6 +21,7 @@ public class ScienceCircleFragment extends BaseFragment {
     @Override
     public void initView(View view) {
         super.initView(view);
+
     }
 
     @Override
@@ -29,7 +30,6 @@ public class ScienceCircleFragment extends BaseFragment {
         SharedPreferences parameter = getContext().getSharedPreferences("parameter", 0);
         userId = parameter.getString("userId", "");
         sessionId = parameter.getString("sessionId", "");
-
     }
 
     @Override

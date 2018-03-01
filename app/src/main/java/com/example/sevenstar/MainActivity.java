@@ -15,6 +15,9 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.example.sevenstar.activity.SplashActivity;
+import com.example.sevenstar.app.MyApp;
+import com.example.sevenstar.constant.APPConfig;
 import com.example.sevenstar.fragment.addressBook.AddressBookFragment;
 import com.example.sevenstar.fragment.scienceCircle.ScienceCircleFragment;
 
@@ -22,7 +25,10 @@ import com.example.sevenstar.fragment.userSelf.MyFragment;
 
 import com.example.sevenstar.fragment.consult.ConsultFragment;
 
+import com.example.sevenstar.login.LoginActivity;
+import com.example.sevenstar.utils.SharedPreferencesUtils;
 import com.hjm.bottomtabbar.BottomTabBar;
+import com.hyphenate.chat.EMClient;
 
 public class MainActivity extends FragmentActivity {
 
@@ -43,6 +49,12 @@ public class MainActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        if (!MyApp.isLogin) {
+//            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+//            startActivity(intent);
+//            finish();
+//            return;
+//        }
         setContentView(R.layout.activity_main);
         initView();
         initData();
@@ -62,43 +74,12 @@ public class MainActivity extends FragmentActivity {
                     }
 
                 });
-
-//        setListener();
-
     }
 
-    /*private void setListener() {
-        mRg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                FragmentTransaction transaction = manager.beginTransaction();
-                switch (checkedId) {
-                    case R.id.bt_Consult:
-                        transaction.replace(R.id.frame, consultFragment);
-                        break;
-                    case R.id.bt_ScienceCircle:
-                        transaction.replace(R.id.frame, scienceCircleFragment);
-                        break;
-                    case R.id.bt_AddressBook:
-                        transaction.replace(R.id.frame, addressBookFragment);
-                        addressBookFragment.setArguments(bundle);
-                        break;
-                    case R.id.bt_userSelf:
-                        transaction.replace(R.id.frame, myFragment);
-                        break;
-                }
-                transaction.commit();
-            }
-        });
-    }*/
-
-
     private void initData() {
-        Intent intent = getIntent();
-        bundle = intent.getExtras();
-        String userId = bundle.getString("userId");
-        String sessionId = bundle.getString("sessionId");
-        Log.e("TAG", userId);
+
+        String userId = (String) SharedPreferencesUtils.getParam(MainActivity.this, APPConfig.USER_ID, "");
+        String sessionId = (String) SharedPreferencesUtils.getParam(MainActivity.this, APPConfig.SESSION_ID, "");
 
         SharedPreferences preferences = getSharedPreferences("parameter", 0);
         SharedPreferences.Editor edit = preferences.edit();

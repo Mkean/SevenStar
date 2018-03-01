@@ -1,12 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_centerInParent="true"
-        android:layout_width="wrap_content"
+    <include layout="@layout/interface_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="我是咨询" />
+        android:orientation="horizontal">
 
-</RelativeLayout>
+        <android.support.design.widget.TabLayout
+            android:id="@+id/consult_tabLayout"
+            style="@style/TabTextSize"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            app:tabSelectedTextColor="@color/blue" />
+
+        <TextView
+            android:id="@+id/consult_add"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/consult_add_shape"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:text="+"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+    <com.example.sevenstar.custom.BanViewPager
+        android:id="@+id/consult_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:isScrollContainer="true">
+
+    </com.example.sevenstar.custom.BanViewPager>
+</LinearLayout>

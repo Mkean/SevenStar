@@ -11,7 +11,7 @@ import java.util.List;
 public class FriendsBean {
 
     /**
-     * result : [{"id":2,"img":"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=114395345,3231482796&fm=27&gp=0.jpg","nickName":"钱重帆"},{"id":3,"img":"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=114395345,3231482796&fm=27&gp=0.jpg","nickName":"王财荣"}]
+     * result : [{"id":38,"img":"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=114395345,3231482796&fm=27&gp=0.jpg","nickName":"小屁孩","phone":"18311195869"},{"id":37,"img":"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=114395345,3231482796&fm=27&gp=0.jpg","nickName":"zhangsan","phone":"18236019866"},{"id":37,"img":"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=114395345,3231482796&fm=27&gp=0.jpg","nickName":"zhangsan","phone":"18236019866"}]
      * message : 查询成功
      * status : 0000
      */
@@ -19,7 +19,6 @@ public class FriendsBean {
     private String message;
     private String status;
     private List<ResultBean> result;
-
 
     public String getMessage() {
         return message;
@@ -47,19 +46,20 @@ public class FriendsBean {
 
     public static class ResultBean extends EaseUser {
         /**
-         * id : 2
+         * id : 38
          * img : https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=114395345,3231482796&fm=27&gp=0.jpg
-         * nickName : 钱重帆
+         * nickName : 小屁孩
+         * phone : 18311195869
          */
 
         private int id;
         private String img;
         private String nickName;
+        private String phone;
 
         public ResultBean(String username) {
             super(username);
         }
-
 
         public int getId() {
             return id;
@@ -83,6 +83,14 @@ public class FriendsBean {
 
         public void setNickName(String nickName) {
             this.nickName = nickName;
+        }
+
+        public String getPhone() {
+            return phone;
+        }
+
+        public void setPhone(String phone) {
+            this.phone = phone;
         }
     }
 }
