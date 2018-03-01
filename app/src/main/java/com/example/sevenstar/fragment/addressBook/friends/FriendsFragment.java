@@ -1,6 +1,7 @@
 package com.example.sevenstar.fragment.addressBook.friends;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.Toast;
 
@@ -10,10 +11,13 @@ import com.example.sevenstar.fragment.addressBook.friends.bean.FriendsBean;
 import com.example.sevenstar.fragment.addressBook.friends.presenter.FriendsPresenter;
 import com.example.sevenstar.fragment.addressBook.friends.view.FriendsView;
 import com.hyphenate.easeui.domain.EaseUser;
+import com.hyphenate.easeui.ui.EaseContactListFragment;
 import com.hyphenate.easeui.widget.EaseContactList;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by j on 18.2.25.
