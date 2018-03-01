@@ -1,6 +1,7 @@
 package com.example.sevenstar.fragment.addressBook.friends;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -114,6 +115,11 @@ public class FriendsFragment extends BaseFragment implements FriendsView {
     public void findFailed(Throwable e) {
         $Log(e.getMessage());
         $toast("网络出错！");
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
     }
 
     private void setEaseList(FriendsBean friendsBean) {
