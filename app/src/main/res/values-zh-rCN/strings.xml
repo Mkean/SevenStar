@@ -5,4 +5,6 @@
     <string name="forget_title_name">忘记密码</string>
     <string name="addressbook_title_name">通讯录</string>
     <string name="consult_title_name">资讯</string>
+    <string name="addressbook_new_friends">新朋友</string>
+
 </resources>

@@ -30,4 +30,7 @@ public class mConstant {
 
     //获取新闻类型
     public static final String NewsType = "kjbd/nawstype/findNewsTypes";
+
+    //新朋友界面我的消息
+    public static final String NewFriendsInform = "kjbd/friendship/selectMyNotice";
 }

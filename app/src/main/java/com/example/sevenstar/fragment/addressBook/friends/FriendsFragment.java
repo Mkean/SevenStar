@@ -1,32 +1,19 @@
 package com.example.sevenstar.fragment.addressBook.friends;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
-import android.view.Window;
+import android.widget.Toast;
 
 import com.example.sevenstar.R;
-import com.example.sevenstar.db.DemoDBManager;
 import com.example.sevenstar.fragment.BaseFragment;
 import com.example.sevenstar.fragment.addressBook.friends.bean.FriendsBean;
 import com.example.sevenstar.fragment.addressBook.friends.presenter.FriendsPresenter;
 import com.example.sevenstar.fragment.addressBook.friends.view.FriendsView;
-import com.hyphenate.easeui.EaseUI;
 import com.hyphenate.easeui.domain.EaseUser;
-import com.hyphenate.easeui.ui.EaseBaseFragment;
-import com.hyphenate.easeui.ui.EaseContactListFragment;
 import com.hyphenate.easeui.widget.EaseContactList;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
 
 /**
  * Created by j on 18.2.25.
@@ -35,6 +22,7 @@ import java.util.Set;
 
 public class FriendsFragment extends BaseFragment implements FriendsView {
 
+    private EaseContactList mEaseList;
     private FriendsPresenter friendsPresenter;
     private boolean isPrepared;
     private EaseContactListFragment contactListFragment;
@@ -66,7 +54,6 @@ public class FriendsFragment extends BaseFragment implements FriendsView {
         if (!isPrepared || !isVisible) {
             return;
         }
-
         Bundle bundle = getArguments();
         String userId = bundle.getString("userId");
         String sessionId = bundle.getString("sessionId");
@@ -130,7 +117,7 @@ public class FriendsFragment extends BaseFragment implements FriendsView {
         contactListFragment.setContactListItemClickListener(new EaseContactListFragment.EaseContactListItemClickListener() {
             @Override
             public void onListItemClicked(EaseUser user) {
-                
+
             }
         });
 
