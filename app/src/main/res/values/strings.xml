@@ -5,4 +5,6 @@
     <string name="forget_title_name">ForgetPassword</string>
     <string name="addressbook_title_name">AddressBook</string>
     <string name="consult_title_name">Consult</string>
+    <string name="self_title_name">MySelf</string>
+    <string name="science_title_name">ScienceCircle</string>
 </resources>

@@ -3,6 +3,7 @@ package com.example.sevenstar.fragment.scienceCircle;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.sevenstar.MainActivity;
@@ -17,16 +18,19 @@ public class ScienceCircleFragment extends BaseFragment {
 
     private String userId;
     private String sessionId;
+    private TextView mTitleName;
 
     @Override
     public void initView(View view) {
         super.initView(view);
+        mTitleName = view.findViewById(R.id.title_name);
 
     }
 
     @Override
     public void initData() {
         super.initData();
+        mTitleName.setText(R.string.science_title_name);
         SharedPreferences parameter = getContext().getSharedPreferences("parameter", 0);
         userId = parameter.getString("userId", "");
         sessionId = parameter.getString("sessionId", "");

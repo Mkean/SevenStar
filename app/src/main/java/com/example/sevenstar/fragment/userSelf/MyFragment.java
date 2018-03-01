@@ -2,6 +2,7 @@ package com.example.sevenstar.fragment.userSelf;
 
 
 import android.view.View;
+import android.widget.TextView;
 
 import com.example.sevenstar.R;
 import com.example.sevenstar.fragment.BaseFragment;
@@ -11,14 +12,19 @@ import com.example.sevenstar.fragment.BaseFragment;
  */
 
 public class MyFragment extends BaseFragment {
+
+    private TextView mTitleName;
+
     @Override
     public void initView(View view) {
         super.initView(view);
+        mTitleName = (TextView) view.findViewById(R.id.title_name);
     }
 
     @Override
     public void initData() {
         super.initData();
+        mTitleName.setText(R.string.self_title_name);
     }
 
     @Override

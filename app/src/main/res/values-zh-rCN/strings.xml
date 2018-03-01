@@ -6,5 +6,6 @@
     <string name="addressbook_title_name">通讯录</string>
     <string name="consult_title_name">资讯</string>
     <string name="addressbook_new_friends">新朋友</string>
-
+    <string name="self_title_name">我的</string>
+    <string name="science_title_name">科技圈</string>
 </resources>

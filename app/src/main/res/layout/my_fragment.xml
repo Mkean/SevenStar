@@ -5,127 +5,139 @@
     android:orientation="vertical">
 
     <include layout="@layout/interface_title" />
+
     <LinearLayout
-        android:background="#e4e3e3"
         android:layout_width="match_parent"
-        android:layout_height="1dp"></LinearLayout>
+        android:layout_height="1dp"
+        android:background="#e4e3e3"></LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp">
+
         <ImageView
             android:id="@+id/headimage"
-            android:layout_marginLeft="25dp"
-            android:layout_gravity="center"
             android:layout_width="75dp"
-            android:layout_height="75dp" />
+            android:layout_height="75dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="25dp" />
 
         <TextView
             android:id="@+id/nickname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginLeft="10dp"
-            android:layout_gravity="center"
-            android:textSize="20sp"
+            android:layout_weight="1"
             android:text="大卫"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:textSize="20sp" />
 
         <ImageView
-            android:layout_gravity="center"
-            android:src="@drawable/more"
             android:layout_width="40dp"
-            android:layout_height="40dp" />
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:src="@drawable/more" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:background="#bebebe"
         android:layout_width="match_parent"
-        android:layout_height="20dp"/>
+        android:layout_height="20dp"
+        android:background="#bebebe" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="70dp">
+
         <ImageView
-            android:layout_marginLeft="15dp"
-            android:layout_gravity="center"
-            android:src="@drawable/u6"
             android:layout_width="40dp"
-            android:layout_height="40dp" />
-        <TextView
-            android:layout_marginLeft="15dp"
-            android:textSize="20sp"
+            android:layout_height="40dp"
             android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/u6" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="1"
             android:text="我的群组"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:textSize="20sp" />
 
         <ImageView
-            android:src="@drawable/more"
-            android:layout_gravity="center"
             android:layout_width="40dp"
-            android:layout_height="40dp" />
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:src="@drawable/more" />
     </LinearLayout>
+
     <LinearLayout
-        android:background="#000"
         android:layout_width="match_parent"
-        android:layout_height="1dp"/>
+        android:layout_height="1dp"
+        android:background="#000" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="70dp">
+
         <ImageView
-            android:layout_marginLeft="15dp"
-            android:layout_gravity="center"
-            android:src="@drawable/u6"
             android:layout_width="40dp"
-            android:layout_height="40dp" />
-        <TextView
-            android:layout_marginLeft="15dp"
-            android:textSize="20sp"
+            android:layout_height="40dp"
             android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/u6" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="1"
             android:text="版本更新"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:textSize="20sp" />
 
         <ImageView
-            android:src="@drawable/more"
-            android:layout_gravity="center"
             android:layout_width="40dp"
-            android:layout_height="40dp" />
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:src="@drawable/more" />
     </LinearLayout>
+
     <LinearLayout
-        android:background="#000"
         android:layout_width="match_parent"
-        android:layout_height="1dp"/>
+        android:layout_height="1dp"
+        android:background="#000" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="70dp">
-        <ImageView
-            android:layout_marginLeft="15dp"
-            android:layout_gravity="center"
-            android:src="@drawable/u6"
-            android:layout_width="40dp"
-            android:layout_height="40dp" />
-        <TextView
-            android:layout_marginLeft="15dp"
-            android:textSize="20sp"
-            android:layout_gravity="center"
-            android:text="设置"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
 
         <ImageView
-            android:src="@drawable/more"
-            android:layout_gravity="center"
             android:layout_width="40dp"
-            android:layout_height="40dp" />
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/u6" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="1"
+            android:text="设置"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:src="@drawable/more" />
     </LinearLayout>
+
     <LinearLayout
-        android:background="#000"
         android:layout_width="match_parent"
-        android:layout_height="1dp"/>
+        android:layout_height="1dp"
+        android:background="#000" />
 </LinearLayout>

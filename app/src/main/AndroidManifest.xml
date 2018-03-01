@@ -58,19 +58,19 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".MainActivity" >
-
-        </activity>
-        <activity android:name=".login.LoginActivity">
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".login.LoginActivity"></activity>
+        <activity android:name=".register.RegisterActivity" />
+        <activity android:name=".forgetPassword.ForgetActivity" />
+        <activity android:name=".fragment.addressBook.friends.NewFriendsActivity" />
+        <activity android:name=".activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".register.RegisterActivity" />
-        <activity android:name=".forgetPassword.ForgetActivity" />
-        <activity android:name=".fragment.addressBook.friends.NewFriendsActivity"></activity>
+        <activity android:name=".activity.UserInfoActivity"></activity>
     </application>
 
 </manifest>
