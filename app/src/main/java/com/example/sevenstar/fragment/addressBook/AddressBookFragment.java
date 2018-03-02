@@ -21,6 +21,7 @@ import com.example.sevenstar.custom.BanViewPager;
 import com.example.sevenstar.fragment.BaseFragment;
 import com.example.sevenstar.fragment.addressBook.contacts.ContactsFragment;
 import com.example.sevenstar.fragment.addressBook.friends.FriendsFragment;
+import com.example.sevenstar.fragment.addressBook.friends.NewFriendsActivity;
 import com.example.sevenstar.fragment.addressBook.friends.bean.FriendsBean;
 import com.example.sevenstar.fragment.addressBook.friends.presenter.FriendsPresenter;
 import com.example.sevenstar.fragment.addressBook.friends.view.FriendsView;
@@ -106,6 +107,7 @@ public class AddressBookFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 //跳转到新朋友界面
+                $startActivity(NewFriendsActivity.class);
             }
         });
 
