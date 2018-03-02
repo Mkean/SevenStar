@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.sevenstar.fragment.addressBook.friends.SelectFriendsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:layout_weight="1">
+
+            <EditText
+                android:id="@+id/edit_select_friends"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:background="@drawable/zdycircle"
+                android:hint="QQ/手机号"
+                android:imeOptions="actionSend" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/cancle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#fff"
+            android:text="取消" />
+    </LinearLayout>
+    <LinearLayout
+        android:background="#dedede"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+        <ImageView
+            android:background="#ccc7c7"
+            android:layout_marginLeft="15dp"
+            android:layout_gravity="center"
+            android:id="@+id/head_img"
+            android:layout_width="60dp"
+            android:layout_height="60dp" />
+
+        <TextView
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:text="刘明"
+            android:id="@+id/nick_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="#dedede"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"/>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/ll2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_margin="10dp"
+            android:text="email"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginLeft="15dp"
+            android:id="@+id/email"
+            android:layout_margin="10dp"
+            android:text="email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/ll3"
+        android:background="#000"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"/>
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/ll4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_margin="10dp"
+            android:text="phone"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginLeft="15dp"
+            android:id="@+id/phone"
+            android:layout_margin="10dp"
+            android:text="email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:background="#dedede"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"/>
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/ll5"
+        android:background="#dedede"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/add_friend"
+            android:background="#7db369"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="添加到好友"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:background="#dedede"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

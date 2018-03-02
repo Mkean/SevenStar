@@ -18,8 +18,15 @@ import com.example.sevenstar.fragment.addressBook.friends.presenter.FriendsPrese
 import com.example.sevenstar.fragment.addressBook.friends.presenter.NewFriendsInformPresenter;
 import com.example.sevenstar.fragment.addressBook.friends.view.NewFriendsInformView;
 import com.example.sevenstar.login.view.LoginView;
+import com.hyphenate.chat.EMClient;
 
 import java.util.List;
+
+/*
+    李少奇
+    18.2.27
+    新朋友界面
+ */
 
 public class NewFriendsActivity extends BaseActivity implements View.OnClickListener,NewFriendsInformView{
 
@@ -56,6 +63,7 @@ public class NewFriendsActivity extends BaseActivity implements View.OnClickList
         SharedPreferences parameter = getSharedPreferences("parameter", 0);
         String userId = parameter.getString("userId", "");
         String sessionId = parameter.getString("sessionId", "");
+//        Log.e("TAG",userId+"sessionId="+sessionId);
         nFIPresenter.newFriendsInform(sessionId,userId);
     }
     //点击事件监听
@@ -75,6 +83,7 @@ public class NewFriendsActivity extends BaseActivity implements View.OnClickList
                 break;
             case R.id.operation:
                 //跳转
+                $startActivity(AddFriendsActivity.class);
                 break;
         }
     }

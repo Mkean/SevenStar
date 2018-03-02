@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#c7c7c7"
+    android:orientation="vertical"
+    tools:context="com.example.sevenstar.fragment.addressBook.friends.AddFriendsActivity">
+
+    <include layout="@layout/interface_title" />
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="找人" />
+
+        <TextView
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="找群" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/phoneAndqq"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/zdycircle"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="1"
+            android:text="QQ好友/手机号"
+            android:textSize="22sp" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

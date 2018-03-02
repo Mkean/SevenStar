@@ -33,4 +33,10 @@ public class mConstant {
 
     //新朋友界面我的消息
     public static final String NewFriendsInform = "kjbd/friendship/selectMyNotice";
+
+    //新朋友界面我的消息
+    public static final String SelectFriends = "kjbd/friendship/getUser";
+
+    //发送添加好友请求
+    public static final String SendAddFriendsNews = "kjbd/friendship/InitiateNotification";
 }

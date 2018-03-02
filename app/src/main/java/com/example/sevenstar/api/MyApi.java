@@ -6,6 +6,8 @@ import com.example.sevenstar.forgetPassword.bean.ForgetBean;
 import com.example.sevenstar.fragment.addressBook.friends.bean.FriendsBean;
 import com.example.sevenstar.fragment.consult.bean.NewsTypeBean;
 import com.example.sevenstar.fragment.addressBook.friends.bean.NewFriendInformBean;
+import com.example.sevenstar.fragment.addressBook.friends.bean.SelectFriendsBean;
+import com.example.sevenstar.fragment.addressBook.friends.bean.SendAddFriendsNewsBean;
 import com.example.sevenstar.login.bean.LoginBean;
 import com.example.sevenstar.register.bean.RegisterBean;
 
@@ -53,6 +55,14 @@ public interface MyApi {
     //好友消息
     @GET(mConstant.NewFriendsInform)
     Observable<NewFriendInformBean> NewFriendsInfrom(@Header("sessionId") String sessionId, @Header("userId") String userId);
+
+    //查询好友
+    @GET(mConstant.SelectFriends)
+    Observable<SelectFriendsBean> SelectFriends(@Header("sessionId") String sessionId, @Header("userId") String userId,@Query("phone") String phone);
+
+    //查询好友
+    @GET(mConstant.SendAddFriendsNews)
+    Observable<SendAddFriendsNewsBean> sendAddFriendsNews(@Header("sessionId") String sessionId, @Header("userId") String userId, @Query("phone") String friendId);
 
 
 }

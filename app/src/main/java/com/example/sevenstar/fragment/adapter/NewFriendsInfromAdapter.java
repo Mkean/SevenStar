@@ -39,9 +39,13 @@ public class NewFriendsInfromAdapter extends RecyclerView.Adapter<RecyclerView.V
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
      MyViewHolder MyViewHolder = (NewFriendsInfromAdapter.MyViewHolder) holder;
-        MyViewHolder.consent.setText(result.get(position).getNotice());
-        MyViewHolder.message.setText(result.get(position).getContent());
+        MyViewHolder.message.setText(result.get(position).getContent()+"");
         MyViewHolder.name.setText(result.get(position).getCreateTime()+"");
+        if(result.get(position).getNotice().equals("添加好友")){
+            MyViewHolder.consent.setText("同意");
+        }else{
+            MyViewHolder.consent.setText(result.get(position).getNotice());
+        }
     }
 
     @Override
